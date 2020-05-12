@@ -1,27 +1,38 @@
 
-let pokemon = []
-
-let pokaFetch = async () => {
-  await fetch("https://api.pokemontcg.io/v1/cards")
-  .then(res => res.json())
-  
-  
+let pokaFetch = async (url) => {
+  const data = await fetch(url)
+    .then(res => res.json())
+    .catch(error => console.log(error))
+  return data
 }
 
-console.log(pokemon)
-let renderPoka = async (p) =>{
-  await console.log(p[name])
-  let li = document.createElement("li")
-  li.innerHTML = 
-    `<a href="/cards/xy7-4">
-    <img
-      src="https://images.pokemontcg.io/xy7/4.png"
-      class="hvr-grow"
-      alt="Bellossom"
-    />
-  </a>
+
+let renderPoka = async () => {
+  let data = await pokaFetch("https://api.pokemontcg.io/v1/cards")
+  let cards = document.querySelector(".gallery")
+
+  data.cards.forEach(item => {
+    if (item.nationalPokedexNumber == undefined) item.nationalPokedexNumber = "-";
+    let div = document.createElement("div")
+    div.className = "pokadiv";
+    div.innerHTML =
+      `
+    <div class="pokacard">
+      <img
+        src="${item.imageUrl}"
+        alt="${item.name}"
+      />
+    </div>
+    <div class="pokadetails">
+      <p class="txt">Pokadex Number:<br> ${item.nationalPokedexNumber}</p>
+      <p class="txt">Number:<br> ${item.number}</p>
+      <p class="txt">Rarity:<br> ${item.rarity}</p>
+      <p class="txt">Series:<br> ${item.series}</p>
+      <p class="txt">Set:<br> ${item.set}</p>
+    </div>
     `
+    cards.appendChild(div)
+  })
 }
 
-
-pokaFetch()
+renderPoka()

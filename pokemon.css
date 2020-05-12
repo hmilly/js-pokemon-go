@@ -1,74 +1,65 @@
-@keyframes slideIn {
-	0% {
-		opacity: 0;
-		transform: translate(-100%, 0);
-	}
-
-	30% {
-		opacity: 0.1;
-	}
-
-	100% {
-		opacity: 1;
-		transform: translate(0, 0);
-	}
-}
 
 * {
   box-sizing: border-box;
-  border: #4a4a4a solid 1px;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
 }
 
-.columns:last-child {
-    margin-bottom: -.75rem;
-}
 .fade-in {
     animation: fadeIn 1s;
 }
-.pkmn-gallery {
-    text-align: center;
-}
-.columns {
-    margin-left: -.75rem;
-    margin-right: -.75rem;
-    margin-top: -.75rem;
-}
-*, :after, :before {
-    box-sizing: inherit;
-}
 
-div {
-    display: block;
-}
 body {
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-}
-body {
-    color: #4a4a4a;
+    background-color: black;
+    display: inline-block;
+    text-align: center;
+    display: inline-block;
+    width: 98%;
+    max-width: 1400px;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
 }
-body, button, input, select, textarea {
-    font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
-}
-html {
-    background-color: rgb(7, 7, 7);
-    font-size: 16px;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    min-width: 300px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    text-rendering: optimizeLegibility;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-}
-*, :after, :before {
-    box-sizing: inherit;
-}
-*, :after, :before {
-    box-sizing: inherit;
+
+.gallery {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
 }
 
+.pokadiv{
+    display: inline-block;
+    text-align: left;
+    padding: 1%;
+}
+.pokacard{
+    position: relative;
+}
+
+.pokadetails{
+    position: relative;
+    overflow: hidden;
+    font-size: 14px;
+    margin-top: -138%;
+    margin-left: 3%;
+    height: 322px;
+    width: 232px;
+    text-align: center;
+    border-radius: 5%;
+    border: rgba(0, 0, 0, 0.233) solid 10px;
+    background-color: rgba(83, 82, 82, 0);
+    transition: 0.7s ease-in-out;
+}
+.txt{
+    position: relative;
+    padding: .25px;
+    color: rgba(255, 255, 255, 0);
+    transition: 0.7s ease-in-out;
+}
+
+.pokadetails:hover{
+    background-color: rgba(83, 82, 82, 0.856);
+
+}
+.pokadetails:hover > .txt{
+    color: white;
+}
