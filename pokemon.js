@@ -4,7 +4,8 @@ let pokemon = []
 let pokaFetch = async () => {
   await fetch("https://api.pokemontcg.io/v1/cards")
   .then(res => res.json())
-  .then(res => pokemon.res)
+  
+  
 }
 
 console.log(pokemon)
