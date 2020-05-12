@@ -1,6 +1,6 @@
 
-let pokaFetch = (url) => {
-  const data = fetch(url)
+let pokaFetch = async (url) => {
+  const data = await fetch(url)
     .then(res => res.json())
     .catch(error => console.log(error))
   return data
@@ -9,15 +9,12 @@ let pokaFetch = (url) => {
 
 let renderPoka = async () => {
   let data = await pokaFetch("https://api.pokemontcg.io/v1/cards")
-  
+  let cards = document.querySelector(".gallery")
+
   data.cards.forEach(item => {
-    let gallery = document.querySelector(".gallery")
-    console.log()
+    if (item.nationalPokedexNumber == undefined) item.nationalPokedexNumber = "-";
     let div = document.createElement("div")
     div.className = "pokadiv";
-
-    if(item.nationalPokedexNumber == undefined) item.nationalPokedexNumber = "-";
-
     div.innerHTML =
       `
     <div class="pokacard">
@@ -34,11 +31,8 @@ let renderPoka = async () => {
       <p class="txt">Set:<br> ${item.set}</p>
     </div>
     `
-    return gallery.appendChild(div)
+    cards.appendChild(div)
   })
 }
-
-
-
 
 renderPoka()
