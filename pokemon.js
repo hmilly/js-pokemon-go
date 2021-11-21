@@ -24,7 +24,7 @@ let renderPoka = async () => {
       />
     </div>
     <div class="pokadetails">
-      <p class="txt">Pokadex Number:<br> ${item.nationalPokedexNumber}</p>
+      <p class="txt">Pokédex Number:<br> ${item.nationalPokedexNumber}</p>
       <p class="txt">Number:<br> ${item.number}</p>
       <p class="txt">Rarity:<br> ${item.rarity}</p>
       <p class="txt">Series:<br> ${item.series}</p>
