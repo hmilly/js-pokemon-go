@@ -1,2 +1,2 @@
 
-# ⚡🃏 Pokemon Card ⚡🃏
+# ⚡🃏 Pokemon Cards ⚡🃏
